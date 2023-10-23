@@ -14,14 +14,16 @@ function MostrarActores(idSerie)
             success: 
             function (response)
             {
-                $("#NombreActor").html(response.Nombre);
+                for(const act of response){
+                    console.log(act.Nombre);
+                    $("#NombreActor").html(act.Nombre);  
+                }
             }
         }
     }
-
 }
 
-function MostrarTemporadas(idSerie) //tiene que ser una lista. 
+function MostrarTemporadas(idSerie) 
 {
     $.ajax
     {
@@ -38,6 +40,27 @@ function MostrarTemporadas(idSerie) //tiene que ser una lista.
                     $("#TiuloTemporada").html(tem.TituloTemporada); //ver si es asi o como esta abajo. 
                     $("#NumeroTemporada").html(tem.NumeroTemporada);
                 }
+            }
+        }
+    }
+
+}
+
+function MostrarInfoSerie(idSerie) 
+{
+    $.ajax
+    {
+        {
+            type: 'POST',
+            dataType: 'JSON',
+            url:'/Home/Index', //ver si el modal es en un nuevo.cshtml. Ver si aca va el nombre de la funcion del controller
+            data: {IdSerie : idSerie}, //
+            success: 
+            function (response)
+            {
+                $("#Nombre").html("Nombre: " + response.Nombre);
+                $("#Sinopsis").html("Sinopsis: " + response.Sinopsis);
+                $("#AñoInicio").html("Año de Inicio: " + response.AñoInicio);
             }
         }
     }

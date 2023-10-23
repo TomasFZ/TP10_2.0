@@ -20,12 +20,16 @@
         <h2>@s.Nombre</h2>
         <p>¡Bienvenido a la serie Título! Explora más sobre la serie a continuación:</p>
         
-        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarActores(@Actores.IdSerie)">
+        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarActores(@s.IdSerie)">
         Ver Info Actores en Modal
         </button>
 
-        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarTemporadas(@Temporadas.IdSerie)">
+        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarTemporadas(@s.IdSerie)">
         Ver Info Temporadas en Modal
+        </button>
+
+        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarInfoSerie(@s.IdSerie)">
+        Ver más Info de la Serie en Modal
         </button>
     </div>
 
@@ -48,7 +52,7 @@
       <div class="modal-body">
         <img class="" id="">
         <div id=""></div>
-        <div id=""></div>
+        <div id=""></div> <!--Ver como hacer para mostrar los ids sin que sea uno en especifico-->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
