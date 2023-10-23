@@ -14,13 +14,15 @@
 </head>
 <!--Se recorren las series con un foreach-->
 <body>
-@foreach(Series s in ViewBag.Series){
-    <div class="serie-card">
-        <img src="imagen-de-la-serie.jpg" alt="Imagen de la Serie">
-        <h2>@s.Nombre</h2>
-        <p>¡Bienvenido a la serie Título! Explora más sobre la serie a continuación:</p>
-        
-        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarActores(@s.IdSerie)">
+@foreach(Series s in ViewBag.ListaSeries){
+
+  <div class="card" style="width: 18rem;">
+  <img src="@s.ImagenSerie" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@s.Nombre</h5>
+    <p class="card-text">@s.Sinopsis</p>
+
+    <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarActores(@s.IdSerie)">
         Ver Info Actores en Modal
         </button>
 
@@ -31,8 +33,8 @@
         <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarInfoSerie(@s.IdSerie)">
         Ver más Info de la Serie en Modal
         </button>
-    </div>
-
+  </div>
+</div>
 }
 </body>
 
@@ -61,8 +63,5 @@
     </div>
   </div>
 </div>
-
-
-
 
 </html>

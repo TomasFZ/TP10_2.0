@@ -14,7 +14,7 @@ function MostrarActores(idSerie)
             success: 
             function (response)
             {
-                for(const act of response){
+                for(let act of response){ //ver si es let o const
                     console.log(act.Nombre);
                     $("#NombreActor").html(act.Nombre);  
                 }
@@ -35,7 +35,7 @@ function MostrarTemporadas(idSerie)
             success: 
             function (response)
             {
-                for(const tem of response){
+                for(let tem of response){
                     console.log(tem.Nombre);
                     $("#TiuloTemporada").html(tem.TituloTemporada); //ver si es asi o como esta abajo. 
                     $("#NumeroTemporada").html(tem.NumeroTemporada);
