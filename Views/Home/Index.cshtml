@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<h1>TP 10 - NetflixTrucho</h1>
+<h2>Slogan</h2>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Título</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Agrega tus estilos CSS aquí -->
+</head>
+<!--Se recorren las series con un foreach-->
+<body>
+@foreach(Series s in ViewBag.Series){
+    <div class="serie-card">
+        <img src="imagen-de-la-serie.jpg" alt="Imagen de la Serie">
+        <h2>@s.Nombre</h2>
+        <p>¡Bienvenido a la serie Título! Explora más sobre la serie a continuación:</p>
+        
+        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarActores(@Actores.IdSerie)">
+        Ver Info Actores en Modal
+        </button>
+
+        <button type="button"class="btn btn-primary" data toggle="modal" data-target="#Modal" onclick="MostrarTemporadas(@Temporadas.IdSerie)">
+        Ver Info Temporadas en Modal
+        </button>
+    </div>
+
+}
+</body>
+
+<!--ES UN SOLO MODAL PARA TANTO TEMPORADAS COMO ACTORES COMO INFO SERIE.-->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="NombreActor">Ver Info Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="" id="">
+        <div id=""></div>
+        <div id=""></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</html>
