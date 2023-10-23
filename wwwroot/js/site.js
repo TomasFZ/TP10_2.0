@@ -52,7 +52,7 @@ function MostrarInfoSerie(idSerie)
         {
             type: 'POST',
             dataType: 'JSON',
-            url:'/Home/Index', //ver si el modal es en un nuevo.cshtml. Ver si aca va el nombre de la funcion del controller
+            url:'/Home/VerSerie', //ver si el modal es en un nuevo.cshtml. Ver si aca va el nombre de la funcion del controller
             data: {IdSerie : idSerie}, //
             success: 
             function (response)
