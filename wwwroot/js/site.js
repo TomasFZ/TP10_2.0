@@ -5,7 +5,7 @@
 
 function MostrarActores(idSerie)
 {
-    $.ajax{
+    $.ajax(
         {
             type: 'POST',
             dataType: 'JSON',
@@ -20,13 +20,13 @@ function MostrarActores(idSerie)
                 }
             }
         }
-    }
+    );
 }
 
 function MostrarTemporadas(idSerie) 
 {
-    $.ajax
-    {
+    $.ajax(
+    
         {
             type: 'POST',
             dataType: 'JSON',
@@ -42,13 +42,13 @@ function MostrarTemporadas(idSerie)
                 }
             }
         }
-    }
+    );
 }
 
 function MostrarInfoSerie(idSerie) 
 {
-    $.ajax
-    {
+    $.ajax(
+    
         {
             type: 'POST',
             dataType: 'JSON',
@@ -62,5 +62,5 @@ function MostrarInfoSerie(idSerie)
                 $("#Num").html("Año de Inicio: " + response.añoInicio);
             }
         }
-    }
+    );
 }
