@@ -16,7 +16,7 @@ function MostrarActores(idSerie)
             {
                 for(let act of response){ //ver si es let o const
                     console.log(act.Nombre);
-                    $("#NombreActor").html(act.Nombre);  
+                    $("#Nombre").html(act.nombre);  
                 }
             }
         }
@@ -36,14 +36,13 @@ function MostrarTemporadas(idSerie)
             function (response)
             {
                 for(let tem of response){
-                    console.log(tem.Nombre);
-                    $("#TiuloTemporada").html(tem.TituloTemporada); //ver si es asi o como esta abajo. 
-                    $("#NumeroTemporada").html(tem.NumeroTemporada);
+                    console.log(tem.nombre);
+                    $("#Nombre").html(tem.tituloTemporada); //ver si es asi o como esta abajo. 
+                    $("#Num").html(tem.numeroTemporada);
                 }
             }
         }
     }
-
 }
 
 function MostrarInfoSerie(idSerie) 
@@ -58,11 +57,10 @@ function MostrarInfoSerie(idSerie)
             success: 
             function (response)
             {
-                $("#Nombre").html("Nombre: " + response.Nombre);
-                $("#Sinopsis").html("Sinopsis: " + response.Sinopsis);
-                $("#AñoInicio").html("Año de Inicio: " + response.AñoInicio);
+                $("#Nombre").html("Nombre: " + response.nombre);
+                $("#Texto").html("Sinopsis: " + response.sinopsis);
+                $("#Num").html("Año de Inicio: " + response.añoInicio);
             }
         }
     }
-
 }
