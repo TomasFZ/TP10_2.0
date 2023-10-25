@@ -5,8 +5,7 @@ namespace TP10.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
-    {
+    public IActionResult Index(){
         ViewBag.ListaSeries = BD.CargarSeries();
         return View();
     }

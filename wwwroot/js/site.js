@@ -14,10 +14,15 @@ function MostrarActores(idSerie)
             success: 
             function (response)
             {
+                let string = "";
+                let num = "";
                 for(let act of response){ //ver si es let o const
-                    console.log(act.Nombre);
-                    $("#Nombre").html(act.nombre);  
+                    console.log(act.nombre); 
+                    string = string + " " + act.nombre
                 }
+                $("#Texto").html(string); 
+                $("#Nombre").html("Actores");
+                $("#Num").html(""); 
             }
         }
     );
@@ -35,11 +40,17 @@ function MostrarTemporadas(idSerie)
             success: 
             function (response)
             {
+                let string = "";
+                let num = "";
                 for(let tem of response){
-                    console.log(tem.nombre);
-                    $("#Nombre").html(tem.tituloTemporada); //ver si es asi o como esta abajo. 
-                    $("#Num").html(tem.numeroTemporada);
-                }
+                    console.log(tem.tituloTemporada);
+                    console.log(tem.numeroTemporada)
+                    string = string + " " + tem.tituloTemporada;
+                    num = num + " " + tem.numeroTemporada;
+                } 
+                $("#Texto").html(string); 
+                $("#Nombre").html("Temporadas"); 
+                $("#Num").html(num); 
             }
         }
     );
@@ -48,19 +59,21 @@ function MostrarTemporadas(idSerie)
 function MostrarInfoSerie(idSerie) 
 {
     $.ajax(
-    
         {
             type: 'POST',
             dataType: 'JSON',
-            url:'/Home/VerSerie', //ver si el modal es en un nuevo.cshtml. Ver si aca va el nombre de la funcion del controller
+            url:'/Home/VerSerie', 
             data: {IdSerie : idSerie}, //
             success: 
             function (response)
             {
-                $("#Nombre").html("Nombre: " + response.nombre);
+                console.log(response.nombre)
+                console.log(response.sinopsis)
+                console.log(response.añoInicio)
+                $("#Nombre").html("Info de " + response.nombre);
                 $("#Texto").html("Sinopsis: " + response.sinopsis);
                 $("#Num").html("Año de Inicio: " + response.añoInicio);
             }
         }
     );
-}
+}//anda todo menos mostrarInfoSerie mentira ya esta. oficialmente terminado el tp. 

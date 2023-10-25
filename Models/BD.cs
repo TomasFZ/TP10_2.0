@@ -44,7 +44,7 @@ namespace TP10.Models
         public static Series VerSerie(int idSerie){
             Series s = new Series();
             using(SqlConnection db = new SqlConnection(_connectionString)){
-                string sql = "Select * Series where IdSerie = @pIdSerie";
+                string sql = "Select * from Series where IdSerie = @pIdSerie";
                  s = db.QueryFirstOrDefault<Series>(sql, new {pIdSerie = idSerie});
                 return s;
             }
