@@ -16,9 +16,9 @@ function MostrarActores(idSerie)
             {
                 let string = "";
                 let num = "";
-                for(let act of response){ //ver si es let o const
+                for(let act of response){
                     console.log(act.nombre); 
-                    string = string + " " + act.nombre
+                    string = string + " " + act.nombre + "<br>"
                 }
                 $("#Texto").html(string); 
                 $("#Nombre").html("Actores");
@@ -35,7 +35,7 @@ function MostrarTemporadas(idSerie)
         {
             type: 'POST',
             dataType: 'JSON',
-            url:'/Home/VerDetalleTemporadas', //ver si el modal es en un nuevo.cshtml. Ver si aca va el nombre de la funcion del controller
+            url:'/Home/VerDetalleTemporadas', 
             data: {IdSerie : idSerie}, //
             success: 
             function (response)
@@ -45,7 +45,7 @@ function MostrarTemporadas(idSerie)
                 for(let tem of response){
                     console.log(tem.tituloTemporada);
                     console.log(tem.numeroTemporada)
-                    string = string + " " + tem.tituloTemporada;
+                    string = string + " " + tem.tituloTemporada + "<br>";
                     num = num + " " + tem.numeroTemporada;
                 } 
                 $("#Texto").html(string); 
@@ -76,4 +76,4 @@ function MostrarInfoSerie(idSerie)
             }
         }
     );
-}//anda todo menos mostrarInfoSerie mentira ya esta. oficialmente terminado el tp. 
+}//anda todo menos mostrarInfoSerie mentira ya esta. oficialmente terminado el tp.
