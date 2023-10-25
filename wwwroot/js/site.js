@@ -9,7 +9,7 @@ function MostrarActores(idSerie)
         {
             type: 'POST',
             dataType: 'JSON',
-            url:'/Home/VerDetalleActores', //ver si el modal es en un nuevo.cshtml. 
+            url:'/Home/VerDetalleActores', 
             data: {IdSerie : idSerie}, //
             success: 
             function (response)
@@ -76,4 +76,4 @@ function MostrarInfoSerie(idSerie)
             }
         }
     );
-}//anda todo menos mostrarInfoSerie mentira ya esta. oficialmente terminado el tp.
+}//

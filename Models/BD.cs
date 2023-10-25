@@ -23,7 +23,6 @@ namespace TP10.Models
         {
             List<Actores> ListaActores = new List<Actores>();
             using(SqlConnection db = new SqlConnection(_connectionString)){
-                //Actores act = new Actor();
                 string sql = "Select * from Actores where IdSerie = @pIdSerie";
                 ListaActores = db.Query<Actores>(sql, new {pIdSerie = idSerie}).ToList();
                 return ListaActores;
@@ -33,7 +32,6 @@ namespace TP10.Models
         public static List<Temporadas> ObtenerTemporadas(int idSerie)
         {
             List<Temporadas> ListaTemporadas = new List<Temporadas>();
-            //Temporadas tem = new Temporadas();
             using(SqlConnection db = new SqlConnection(_connectionString)){
                 string sql = "Select * from Temporadas where IdSerie = @pIdSerie";
                 ListaTemporadas = db.Query<Temporadas>(sql, new {pIdSerie = idSerie}).ToList();
